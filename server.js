@@ -46,18 +46,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// app.use((req, res, next) => {
-//   res.setHeader(
-//     "Access-Control-Allow-Origin",
-//     "https://ethiopiansatiitroorkee.com"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "POST, GET, PUT, DELETE, PATCH"
-//   );
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://ethiopiansatiitroorkee.com"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "POST, GET, PUT, DELETE, PATCH"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 app.use(
   cors({
     origin: ["http://localhost:3000", "https://ethiopiansatiitroorkee.com"],
@@ -114,6 +114,7 @@ app.use((err, req, res, next) => {
 //* connection info for database
 
 let port = process.env.PORT || 80;
+
 async function connectionHierarchy() {
   try {
     //* connection with database
