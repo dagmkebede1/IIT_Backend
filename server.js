@@ -118,7 +118,7 @@ let port = process.env.PORT || 80;
 async function connectionHierarchy() {
   try {
     //* connection with database
-    await connectionInfo.connect((err) => {
+    await connectionInfo.getConnection((err) => {
       if (err) {
         console.log(err);
       } else {
