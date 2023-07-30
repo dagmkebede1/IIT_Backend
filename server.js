@@ -124,7 +124,7 @@ async function connectionHierarchy() {
       } else {
         console.log("successfully connected to database");
         //* server
-        app.listen(port, () => {
+        app.listen(port, "0.0.0.0" , () => {
           console.log(`server is listening to port ${port}`);
         });
       }

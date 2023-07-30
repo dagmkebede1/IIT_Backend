@@ -166,7 +166,7 @@ let registerController = (req, res) => {
                         ...verifiedInfo,
                         verified_user_password: hash_password,
                       };
-                      let userInfo = `INSERT INTO userInfo (user_first_name,user_last_name,user_email,user_email_forProfile,user_Department,user_whatsapp_number,user_Indian_number,user_password,user_study_section,date_of_registration,user_role,user_OTP,user_status) VALUES (?) `;
+                      let userInfo = `INSERT INTO userinfo (user_first_name,user_last_name,user_email,user_email_forProfile,user_Department,user_whatsapp_number,user_Indian_number,user_password,user_study_section,date_of_registration,user_role,user_OTP,user_status) VALUES (?) `;
                       let Value = [
                         verifiedInfo.verified_user_first_name,
                         verifiedInfo.verified_user_last_name,
