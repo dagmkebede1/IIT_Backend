@@ -112,7 +112,7 @@ app.use((err, req, res, next) => {
 });
 
 //* connection info for database
-
+// port
 let port = process.env.PORT || 80;
 
 async function connectionHierarchy() {
